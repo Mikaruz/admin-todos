@@ -5,6 +5,7 @@ import { SidebarItem } from "./SidebarItem";
 import {
   IoCafe,
   IoCalendarOutline,
+  IoCartOutline,
   IoCheckboxOutline,
   IoListOutline,
 } from "react-icons/io5";
@@ -29,6 +30,11 @@ const menuItems = [
     icon: <IoCafe />,
     title: "Cookies",
     path: "/dashboard/cookies",
+  },
+  {
+    icon: <IoCartOutline />,
+    title: "Productos",
+    path: "/dashboard/products",
   },
 ];
 

@@ -1,12 +1,10 @@
-version: "3"
-
 services:
   todosDB:
     image: postgres:15.3
     container_name: todos-db
     restart: always
     ports:
-      - 5432:5432
+      - 5433:5432 # Cambia 5433 por cualquier puerto disponible en tu máquina
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

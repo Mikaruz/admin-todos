@@ -6,7 +6,7 @@ export const metadata = {
   description: "Cookies page",
 };
 
-export default async function CookiesPage() {
+export default function CookiesPage() {
   const cookieStore = cookies();
   const cookieTab = cookieStore.get("selectedTab")?.value ?? "1";
 
