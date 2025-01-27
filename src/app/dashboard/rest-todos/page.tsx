@@ -1,8 +1,10 @@
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import prisma from "@/lib/prisma";
 import { NewTodo, TodosGrid } from "@/todos";
+import { getServerSession } from "next-auth";
 
 export const metadata = {
   title: "Listado de Todos",
@@ -10,6 +12,8 @@ export const metadata = {
 };
 
 export default async function RestTodosPage() {
+  const session = await getServerSession(authOptions);
+
   const todos = await prisma.todo.findMany({ orderBy: { description: "asc" } });
 
   return (
